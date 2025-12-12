@@ -1,0 +1,51 @@
+.site-header {
+  width: 80%; /* Header ki width limit (full screen nahi) */
+  margin: 0 auto; /* Centre se start kar diya */
+  padding: 20px 0; /* Upar niche thodi spacing */
+  display: flex; /* Left and Right ko same line me rakhne ke liye */
+  justify-content: space-between; /* Dono side me space bana ke opposite me rakh diya */
+  align-items: center; /* Vertically centre */
+}
+
+/* ===========================
+   LEFT SIDE (NAME + TAGLINE)
+   =========================== */
+.left-box {
+  display: flex;
+  flex-direction: column; /* Name ke neeche tagline aaye */
+}
+
+.site-name {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.tagline {
+  margin: 0;
+  margin-top: -5px; /* Name aur tagline ke beech gap control */
+  font-size: 14px;
+  color: gray;
+}
+
+/* ===========================
+   RIGHT SIDE NAVBAR
+   =========================== */
+.navbar ul {
+  list-style: none; /* Bullet points hata diye */
+  display: flex; /* Items ko ek hi line me rakhne ke liye */
+  gap: 25px; /* Menu items ke beech gap */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none; /* Underline hata diya */
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: #007bff; /* Hover effect */
+}

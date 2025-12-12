@@ -1,0 +1,240 @@
+/* We use Tag Selector or element selector*/
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #0f0450;
+  color: burlywood;
+  text-align: center;
+  padding-top: 20px;
+}
+/* from this line onwards code is used in "Index.html" */
+h1 {
+  font-size: 42px;
+  letter-spacing: 4px;
+  color: burlywood;
+  margin-bottom: 20px;
+}
+h2 {
+  font-weight: normal;
+  color: cornsilk;
+  margin-top: 5px;
+}
+.login-heading {
+  padding-top: 100px;
+  color: oklch(from color l c h);
+}
+button {
+  padding: 10px 25px;
+  font-size: 16px;
+  border: 2px;
+  background: #e4d20b;
+  color: rgb(142, 21, 21);
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #00e40f;
+}
+div {
+  margin: 20px auto;
+  width: 280px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.30);
+
+
+
+  border-radius: 10px;
+  text-align: left;
+}
+input {
+  width: 95%;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+/* CSS OF INDEX.HTML ENDED */
+/* from this line onwards code is used in "home.html" */
+.site-header { /*Line 10 in Header */
+  width: 100%;
+  background-color: brown; 
+  margin: 0 auto; 
+  padding: 20px 0; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+.top-nav {
+  display: flex;
+  gap: 52px; 
+  align-items: right;
+  text-align: right;
+}
+.left-box {
+  display: flex;
+  padding-left: 105px;
+  flex-direction: column;
+  align-self: flex-start;
+  /* Name ke neeche tagline aaye */
+}
+.navbar a {
+  color: burlywood;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: #09f3f3; 
+}
+.navbar ul {
+  list-style: none; 
+  display: flex; 
+  gap: 25px; 
+  margin: 0;
+  padding: 20px;
+}
+.site-name {
+  margin: 0;
+}
+
+.tagline {
+  margin: 0;
+  margin-top: 5px; 
+  font-size: 20px;
+  color: burlywood;
+}
+
+.welcome-section {
+  text-align: center; 
+  margin-top: 40px; 
+}
+
+.welcome-text {
+  font-size: 32px; 
+  font-weight: bold;
+  color: burlywood;
+}
+
+.images-section {
+  margin-top: 40px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 40px;
+  
+}
+
+
+
+.cards-section {
+  margin-top: 60px;
+  align-self: center;
+  display: grid; /* Grid layout use kia */
+  grid-template-columns: repeat(2, 1fr); /* 4 cards in one row */
+  gap: 20px; /* Cards ke beech space */
+  width: 80%; /* Centre me rakhne ke liye */
+  margin-left: auto;
+  margin-right: auto;
+}
+.card {
+  /* Used in line 37 41 44 47 for cards in images */
+  background: #0f0450;
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  border-radius: 10px; /* Round corners */
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+.card-img {
+  /* Used in Line no. 38 of home.html for problem statement image*/
+  width: 450px;
+  height: 275px;
+  /*height: 30px;*/
+  border-radius: 10px;
+}
+/* ================= FOOTER DESIGN ================= */
+
+/* Footer ka background, padding aur color */
+.site-footer {
+    width: 100%;
+    background-color: brown; /* Header ki width limit (full screen nahi) */
+    margin: 0 auto; /* Centre se start kar diya */
+    padding: 20px 0; /* Upar niche thodi spacing */
+    display: flex; /* Left and Right ko same line me rakhne ke liye */
+    justify-content: space-between; /* Dono side me space bana ke opposite me rakh diya */
+    align-items: center; /* Vertically centre */                /* Top space */
+}
+
+/* Footer ke andar content ko row me laane ke liye */
+.footer-container {
+    width: 85%;                       /* Full screen nahi — center width */
+    margin: auto;                     /* Center align */
+    display: flex;                    /* Side by side items */
+    justify-content:space-around;   /* 3 parts ko alag alag */
+    align-items: center;
+    flex-wrap: wrap;  
+                    /* Mobile view me neeche aa jaye */
+    
+}
+.footbar ul {
+    align-items: center;
+  list-style: none; /* Bullet points hata diye */
+  /*  display: flex; Items ko ek hi line me rakhne ke liye */
+  gap: 25px; /* Menu items ke beech gap */
+  margin: 0;
+  padding: 20px;
+  font-size: large;
+  font-display: auto;
+  font-feature-settings: "aalt";
+ 
+}
+.why-section {
+    width: 85%;
+    margin: 40px auto;
+    
+    padding: 30px 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+.foot a:hover {
+  color: #09f3f3; /* Hover effect */
+}
+/* CSS OF INDEX.HTML ENDED */
+/* from this line onwards code is used in "Problemstatement.html" */
+
+/* ===== EVENT SECTION STYLE ===== */
+.events-section {
+    width: 85%;
+    margin: 50px auto;
+}
+
+
+
+/* ===== CARD STYLE ===== */
+.event-card {
+    background: #c61919;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 25px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Summary (the title you click) */
+.event-card summary {
+    font-size: 40px;
+    font-weight: 600;
+    list-style: none;
+    
+}
+
+/* Dropdown content */
+.event-card ul {
+  font-size: large;
+    margin-top: 15px;
+    padding-left: 20px;
+    color: burlywood;
+    line-height: 1.6;
+}

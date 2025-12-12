@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solution Submission</title>
+
+  <link rel="stylesheet" href="Styleindex.css" />
+
+  <style>
+    .error { color: red; font-size: 14px; }
+    .input-box { margin-bottom: 18px; }
+    label { font-size: 18px; font-weight: 600; }
+    input, textarea {
+      padding: 10px;
+      width: 260px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #999;
+    }
+    textarea { height: 90px; resize: none; }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align:center; margin-bottom:30px;">Solution Submission</h1>
+
+  <form id="submitForm" style="display:flex; flex-direction:column; width:330px; margin:auto;">
+
+    <!-- Registration ID -->
+    <div class="input-box">
+      <label>Registration ID:</label><br>
+      <input type="text" id="regid" oninput="removeError('regidError')">
+      <span id="regidError" class="error"></span>
+    </div>
+
+    <!-- Problem Statement -->
+    <div class="input-box">
+      <label>Problem Statement Title:</label><br>
+      <textarea id="problem" oninput="removeError('problemError')"></textarea>
+      <span id="problemError" class="error"></span>
+    </div>
+
+    <!-- GitHub Repo -->
+    <div class="input-box">
+      <label>GitHub Repository Link:</label><br>
+      <input type="url" id="github" placeholder="https://github.com/..." 
+             oninput="removeError('githubError')">
+      <span id="gi thubError" class="error"></span>
+    </div>
+
+    <button type="button" onclick="validateForm()">Submit</button>
+  </form>
+
+
+  <script>
+
+    function removeError(id) {
+      document.getElementById(id).textContent = "";
+    }
+
+    function validateForm() {
+      let isValid = true;
+
+      const setError = (id, msg) => {
+        document.getElementById(id).textContent = msg;
+        isValid = false;
+      };
+
+      // Registration ID
+      const regid = document.getElementById("regid").value.trim();
+      if (regid === "") setError("regidError", "Registration ID required.");
+
+      // Problem Statement
+      const problem = document.getElementById("problem").value.trim();
+      if (problem === "") setError("problemError", "Enter the problem title.");
+
+      // GitHub repository
+      const github = document.getElementById("github").value.trim();
+      if (!github.startsWith("http"))
+        setError("githubError", "Enter a valid GitHub link.");
+
+      // If all valid
+      if (isValid) {
+        alert("Solution submitted successfully!");
+        window.location.href = "home.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+
+  <link rel="stylesheet" href="Styleindex.css" />
+
+  <style>
+    .error { color: red; font-size: 14px; }
+    .input-box { margin-bottom: 18px; }
+    label { font-size: 18px; font-weight: 600; }
+    input {
+      padding: 10px;
+      width: 260px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #999;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align:center; margin-bottom:30px;">Event Registration</h1>
+
+  <form id="myForm" style="display:flex; flex-direction:column; width:330px; margin:auto;">
+
+    <!-- Event Name -->
+    <div class="input-box">
+      <label>Event Name:</label><br>
+      <input type="text" id="event" oninput="removeError('eventError')">
+      <span id="eventError" class="error"></span>
+    </div>
+
+    <!-- College Name -->
+    <div class="input-box">
+      <label>College Name:</label><br>
+      <input type="text" id="college" oninput="removeError('collegeError')">
+      <span id="collegeError" class="error"></span>
+    </div>
+
+    <!-- Team Name -->
+    <div class="input-box">
+      <label>Team Name:</label><br>
+      <input type="text" id="team" oninput="removeError('teamError')">
+      <span id="teamError" class="error"></span>
+    </div>
+
+    <!-- Member 1 -->
+    <h3>Member 1</h3>
+    <div class="input-box">
+      <label>Name:</label><br>
+      <input type="text" id="m1name" oninput="removeError('m1nameError')">
+      <span id="m1nameError" class="error"></span>
+    </div>
+    <div class="input-box">
+      <label>Email:</label><br>
+      <input type="email" id="m1email" oninput="removeError('m1emailError')">
+      <span id="m1emailError" class="error"></span>
+    </div>
+
+    <!-- Member 2 -->
+    <h3>Member 2</h3>
+    <div class="input-box">
+      <label>Name:</label><br>
+      <input type="text" id="m2name" oninput="removeError('m2nameError')">
+      <span id="m2nameError" class="error"></span>
+    </div>
+    <div class="input-box">
+      <label>Email:</label><br>
+      <input type="email" id="m2email" oninput="removeError('m2emailError')">
+      <span id="m2emailError" class="error"></span>
+    </div>
+
+    <!-- Member 3 -->
+    <h3>Member 3</h3>
+    <div class="input-box">
+      <label>Name:</label><br>
+      <input type="text" id="m3name" oninput="removeError('m3nameError')">
+      <span id="m3nameError" class="error"></span>
+    </div>
+    <div class="input-box">
+      <label>Email:</label><br>
+      <input type="email" id="m3email" oninput="removeError('m3emailError')">
+      <span id="m3emailError" class="error"></span>
+    </div>
+
+    <!-- GitHub -->
+    <div class="input-box">
+      <label>GitHub Link:</label><br>
+      <input type="url" id="github" placeholder="https://github.com/..." 
+             oninput="removeError('githubError')">
+      <span id="githubError" class="error"></span>
+    </div>
+
+    <button type="button" onclick="validateForm()">Submit</button>
+  </form>
+
+  <script>
+
+    function removeError(id) {
+      document.getElementById(id).textContent = "";
+    }
+
+    function validateForm() {
+      let isValid = true;
+
+      const setError = (id, msg) => {
+        document.getElementById(id).textContent = msg;
+        isValid = false;
+      };
+
+      // Event
+      const event = document.getElementById("event").value.trim();
+      if (event === "") setError("eventError", "Event name required.");
+
+      // College
+      const college = document.getElementById("college").value.trim();
+      if (college === "") setError("collegeError", "College name required.");
+
+      // Team Name
+      const team = document.getElementById("team").value.trim();
+      if (team === "") setError("teamError", "Team name required.");
+
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      // Member 1
+      if (document.getElementById("m1name").value.trim() === "")
+        setError("m1nameError", "Required.");
+      const m1email = document.getElementById("m1email").value.trim();
+      if (!emailPattern.test(m1email))
+        setError("m1emailError", "Invalid email.");
+
+      // Member 2
+      if (document.getElementById("m2name").value.trim() === "")
+        setError("m2nameError", "Required.");
+      const m2email = document.getElementById("m2email").value.trim();
+      if (!emailPattern.test(m2email))
+        setError("m2emailError", "Invalid email.");
+
+      // Member 3
+      if (document.getElementById("m3name").value.trim() === "")
+        setError("m3nameError", "Required.");
+      const m3email = document.getElementById("m3email").value.trim();
+      if (!emailPattern.test(m3email))
+        setError("m3emailError", "Invalid email.");
+
+      // GitHub link
+      const github = document.getElementById("github").value.trim();
+      if (!github.startsWith("http")) 
+        setError("githubError", "Valid URL required.");
+
+      if (isValid) {
+          alert("Succesfully registered with registration number 011001273834, Kindly note down or take screenshot of this number as it is required during submission of problem statement ");
+        window.location.href="home.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

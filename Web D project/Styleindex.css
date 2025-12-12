@@ -64,6 +64,53 @@ input {
   justify-content: space-between; 
   align-items: center; 
 }
+/* Add this new flex row for logo + text */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Logo size */
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Title + tagline center aligned vertically */
+.title-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 150px;
+}
+
+/* Shift heading + tagline slightly right */
+.left-box {
+  display: flex;
+  flex-direction: row;  /* earlier column */
+  align-items: center;
+  width: fit-content;
+  gap: 15px;
+  padding-left: 50px;
+}
+
+/* Keep your existing styling */
+.site-name {
+  margin: 0;
+  flex-direction: column;
+}
+
+.tagline {
+  margin: 0;
+  margin-top: 5px;
+  font-size: 20px;
+  color: burlywood;
+  flex-direction: column;
+}
+
 .top-nav {
   display: flex;
   gap: 52px; 
